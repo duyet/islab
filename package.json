@@ -20,7 +20,9 @@
   "scripts": {
     "preinstall": "npm install semver && node -e \"require('./core/server/utils/startup-check.js').nodeVersion()\"",
     "start": "node index",
-    "test": "grunt validate --verbose"
+    "test": "grunt validate --verbose",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "~0.10.0 || ~0.12.0 || ~4.2.0",
@@ -59,14 +61,15 @@
     "passport-http-bearer": "1.0.1",
     "passport-oauth2-client-password": "0.1.2",
     "path-match": "1.2.3",
-    "request": "2.65.0",
+    "request": "2.82.0",
     "rss": "1.2.0",
     "semver": "5.0.3",
     "showdown-ghost": "0.3.6",
-    "sqlite3": "3.1.1",
+    "sqlite3": "4.0.0",
     "unidecode": "0.1.8",
     "validator": "4.1.0",
-    "xml": "1.0.0"
+    "xml": "1.0.0",
+    "snyk": "^1.83.0"
   },
   "optionalDependencies": {
     "mysql": "2.1.1",
@@ -102,5 +105,6 @@
     "supertest": "1.0.1",
     "testem": "0.8.3",
     "top-gh-contribs": "2.0.2"
-  }
+  },
+  "snyk": true
 }
